@@ -27,7 +27,9 @@ Right-click any ladder of the chain with a ladder in hand:
 * the ladder is taken from the hand (creative does not consume it);
 * if the spot below is not replaceable (stone, ore, a chest) nothing happens and vanilla placement
   gets the click instead;
-* water at the target makes the new ladder waterlogged.
+* water at the target makes the new ladder waterlogged;
+* placement is refused when `mayUseItemAt` refuses it (adventure mode, protected regions) — the same
+  check vanilla uses, so the rope cannot bypass a server's building rules.
 
 No length limit: a chain can go from the surface to bedrock, one ladder per click.
 

@@ -55,6 +55,11 @@ public final class LadderAction {
 		if (!level.isInWorldBounds(target) || !level.getBlockState(target).canBeReplaced()) {
 			return InteractionResult.PASS;
 		}
+		// Права спрашиваем как ванильная установка блока: в adventure и в защищённых регионах
+		// mayUseItemAt вернёт false, а наш обработчик иначе обходил бы запрет.
+		if (player.isSpectator() || !player.mayUseItemAt(target, hit.getDirection(), held)) {
+			return InteractionResult.PASS;
+		}
 
 		BlockState placed = Blocks.LADDER.defaultBlockState()
 				.setValue(LadderBlock.FACING, facing)

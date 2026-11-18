@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "ladderhang",
+	"version": "${version}",
+	"name": "LadderHang",
+	"description": "Лестницы висят на лестнице сверху, как лианы, и спускаются вниз правым кликом — как канат.",
+	"authors": [
+		"deaefer"
+	],
+	"license": "MIT",
+	"environment": "server",
+	"entrypoints": {
+		"main": [
+			"ladderhang.LadderHang"
+		]
+	},
+	"mixins": [
+		"ladderhang.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "${minecraft_dep}",
+		"java": ">=25"
+	}
+}
